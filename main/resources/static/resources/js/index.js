@@ -19,13 +19,18 @@ var app = (function(){    //var app- json객체
       var wrapper = document.querySelector('#wrapper');  
       wrapper.innerHTML = '<form action="/action_page.php">'
       '  id:<br>'
+      '  <input type="text" name="" >'
+      '  <br>'
       '  pw:<br>'
+      '  <input type="num" name="" >'
       '  name:<br>'
+      '  <input type="text" name="" >'
       '  phone:<br>'
-      '<input type="button" value="회원가입">'    
+      '  <input type="num" name="" >'
+      '  <br><br>'
+      ' <input type="button" value="회원가입">'    
       '</form> '
 //
-
 
    var btn = document.querySelector('#btn');
    var target = document.getElementById('target');
@@ -46,4 +51,4 @@ var app = (function(){    //var app- json객체
 
    }
    return {init : init};       //클로저 
-})();   
+}});   

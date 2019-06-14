@@ -1,8 +1,8 @@
-var app = (function(){
-   let init=function(){
+var app = (()=>{
+   let init=()=>{
        login_form();
    }
-   let login_form = function(){
+   let login_form = ()=>{
        let wrapper = document.querySelector('#wrapper');
        wrapper.innerHTML = '<form action="/action_page.php">'
        +'  First name:<br>'
@@ -15,12 +15,33 @@ var app = (function(){
        +'  <input id="join-btn" type="button" value="JOIN">'
        +'</form> ';
        let join_btn = document.querySelector('#join-btn');
-       join_btn.addEventListener('click',function(){
+       join_btn.addEventListener('click',()=>{
            join_form();
        });
-       
+       let login_btn = document.querySelector('#login-btn');
+       login_btn.addEventListener('click',()=>{
+        alert('로그인 버튼 클릭');
+        count();
+       });
+
+
    }
-   let join_form = function(){
+   let count =()=>{
+        let xhr = new XMLHttpRequest();
+        method = 'GET'
+        url = 'count';
+        xhr.open(method, url, true);
+        xhr.onreadystatechange=()=>{
+            if(xhr.readyState === 4 && xhr.status === 200){
+                alert('성공');
+                let wrapper = document.querySelector('#wrapper');
+                wrapper.innerHTML = '총 고객수 <h1>' + xhr.responseText+'</h1>'
+            }
+        }
+        xhr.send();
+   }
+
+   let join_form = ()=>{
        let wrapper = document.querySelector('#wrapper');
        wrapper.innerHTML = '<form>'
        +'	ID<br>'

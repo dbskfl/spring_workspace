@@ -19,4 +19,5 @@ public class SupplierDTO {
                    postalcode, 
                    country, 
                    phone; 
+                   
 }
